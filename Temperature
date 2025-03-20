@@ -1,0 +1,83 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+  //string a[7]={"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+  float b[7];
+  float a,c;
+  int choice, temp,d,x,z;
+  int e=0;
+
+  do{
+  cout << "Menu Options:" << endl;
+  cout << "1. Enter Daily Temperatures" << endl;
+  cout << "2. View All Temperatures" << endl;
+  cout << "3. Calculate Average Temperature" << endl;
+  cout << "4. Count Days Above Threshold Temperature" << endl;
+  cout << "5. Find Temperature Difference Between Two Days" << endl;
+  cout << "6. Quit" << endl;
+  cout << "Choose an option:";
+  cin >> choice;
+  cout << endl;
+
+    if(choice==1)
+    {
+    for(int i=0;i<7;i++)
+    {
+      a=i+1;
+      cout << "Day " << a << ":";
+      cin >> b[i];
+      c+=b[i];
+    }
+    cout << endl;
+    }
+    
+    else if (choice==2)
+    {
+    for(int i=0;i<7;i++)
+    {
+    a=i+1;
+    cout << "Day " << a << ":";
+    cout << b[i] << endl;
+    }
+    cout << endl;
+    }
+
+    else if (choice==3)
+    {
+      cout << "Average temperature for the week:" << c/7 << endl;
+      cout << endl;
+    }
+
+    else if(choice==4)
+    {
+      cout << "Enter Threshold temp:";
+      cin >> temp;
+      for(int i=0;i<7;i++)
+      {
+        if(b[i]>temp)
+        {
+          e++;
+        }
+      }
+      cout << "Number of days with temperature above " << temp << " : " << e << endl;
+      cout << endl;
+    }
+
+    else if(choice==5)
+    {
+      cout << "Enter the first day number:";
+      cin >> x;
+      cout << endl;
+      cout << "Enter the second day number:";
+      cin >> z;
+      cout << endl;
+
+      cout << "The temperature difference between Day" << x << " and Day " << z << " is: " << b[x-1]-b[z-1] << endl;
+      cout << endl;
+    }
+  }while(choice!=6);
+  cout << "Exiting program, Thank you!" << endl;
+  return 0;
+}
